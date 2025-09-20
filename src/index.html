@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <title>Тестовое задание</title>
+  </head>
+
+  <body>
+    <header class="header" data-js-header>
+      <div class="header__info">
+        <div class="container">
+          <div class="header__info-wrapper">
+            <div class="header__logo logo">
+              <img src="./img/logo.svg" alt="Логотип" width="119" height="36" />
+            </div>
+            <div class="header__contacts">
+              <a class="header__contacts-item" href="tel:+78007775050">8 800 777 50 50</a>
+            </div>
+            <div class="header__search" data-js-search>
+              <button class="header__search-button" type="button" data-js-search-button>
+                <svg width="13" height="13">
+                  <use href="./img/sprite.svg#loupe"></use>
+                </svg>
+              </button>
+              <input class="header__search-input" type="text" name="search" placeholder="Поиск товаров" data-js-search-input />
+            </div>
+            <div class="header__additional">
+              <a class="header__additional-item" href="#">Доставка и оплата</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__nav">
+        <div class="container">
+          <div class="header__nav-wrapper">
+            <nav class="header__menu" data-js-menu>
+              <button class="header__menu-button" type="button" tabindex="1" data-js-menu-button>
+                <svg width="24" height="24">
+                  <use href="./img/sprite.svg#menu"></use>
+                </svg>
+                <span class="visually-hidden">Переключить отображение меню</span>
+              </button>
+              <ul class="header__menu-list" data-js-menu-list>
+                <li class="header__menu-item">
+                  <a class="header__menu-link" href="#">Мобильные телефоны</a>
+                </li>
+                <li class="header__menu-item">
+                  <a class="header__menu-link" href="#">Планшеты</a>
+                </li>
+                <li class="header__menu-item">
+                  <a class="header__menu-link" href="#">Фототехника</a>
+                </li>
+                <li class="header__menu-item">
+                  <a class="header__menu-link" href="#">Ноутбуки</a>
+                </li>
+                <li class="header__menu-item">
+                  <a class="header__menu-link" href="#">Телевизоры</a>
+                </li>
+              </ul>
+            </nav>
+            <a class="header__button" href="#">
+              <div class="header__button-icon">
+                <svg width="17" height="16">
+                  <use href="./img/sprite.svg#cart"></use>
+                </svg>
+              </div>
+              <span class="header__button-text">Корзина</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="catalog">
+        <div class="container">
+          <div class="catalog__wrapper">
+            <div class="catalog__header">
+              <h1 class="catalog__title">Фототехника</h1>
+              <div class="catalog__filters filters" data-js-filters>
+                <button class="filters__open-button" type="button" data-js-filters-open-button>
+                  <svg width="22" height="22">
+                    <use href="./img/sprite.svg#settings"></use>
+                  </svg>
+                  <span class="visually-hidden">Открыть фильтры</span>
+                </button>
+                <div class="filters__wrapper" data-js-filters-wrapper>
+                  <button class="filters__close-button" type="button" data-js-filters-close-button>
+                    <svg width="19" height="19">
+                      <use href="./img/sprite.svg#cross"></use>
+                    </svg>
+                    <span class="visually-hidden">Закрыть фильтры</span>
+                  </button>
+                  <form class="filters__form filters-form" action="" method="get">
+                    <div class="filters-form__select-wrapper" data-js-select-wrapper>
+                      <label class="visually-hidden" for="logo-select">Выберите логотип</label>
+                      <select class="filters-form__select-input input" name="logo" id="logo-select" data-js-select-hidden>
+                        <option value="any" selected>Любого логотипа</option>
+                        <option value="compact">Компакт-камера</option>
+                        <option value="mirrorless">Беззеркальная</option>
+                        <option value="mirror">Зеркальная</option>
+                        <option value="mediumFormat">Среднеформатная</option>
+                      </select>
+                      <div class="filters-form__custom-select" data-js-select-visible>
+                        <button class="filters-form__custom-select-button-selected input" type="button" data-js-select-button>Любого логотипа</button>
+                        <div class="filters-form__custom-select-button-icon">
+                          <svg width="11" height="7">
+                            <use href="./img/sprite.svg#angle"></use>
+                          </svg>
+                        </div>
+                        <div class="filters-form__custom-select-list" data-js-select-visible-list>
+                          <button class="filters-form__custom-select-button input is-hidden" type="button" id="logo-select-any">Любого логотипа</button>
+                          <button class="filters-form__custom-select-button input" type="button" id="logo-select-compact">Компакт-камера</button>
+                          <button class="filters-form__custom-select-button input" type="button" id="logo-select-mirrorless">Беззеркальная</button>
+                          <button class="filters-form__custom-select-button input" type="button" id="logo-select-mirror">Зеркальная</button>
+                          <button class="filters-form__custom-select-button input" type="button" id="logo-select-mediumFormat">Среднеформатная</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filters-form__select-wrapper" data-js-select-wrapper>
+                      <label class="visually-hidden" for="brand-select">Выберите бренд</label>
+                      <select class="filters-form__select-input input" name="brand" id="brand-select" data-js-select-hidden>
+                        <option value="any" selected>Любого бренда</option>
+                        <option value="canon">Canon</option>
+                        <option value="nikon">Nikon</option>
+                        <option value="sony">Sony</option>
+                        <option value="fujifilm">Fujifilm</option>
+                        <option value="samsung">Samsung</option>
+                        <option value="olympus">Olympus</option>
+                      </select>
+                      <div class="filters-form__custom-select" data-js-select-visible>
+                        <button class="filters-form__custom-select-button-selected input" type="button" data-js-select-button>Любого бренда</button>
+                        <div class="filters-form__custom-select-button-icon">
+                          <svg width="11" height="7">
+                            <use href="./img/sprite.svg#angle"></use>
+                          </svg>
+                        </div>
+                        <div class="filters-form__custom-select-list" data-js-select-visible-list>
+                          <button class="filters-form__custom-select-button input is-hidden" type="button" id="brand-select-any">Любого логотипа</button>
+                          <button class="filters-form__custom-select-button input" type="button" id="brand-select-canon">Canon</button>
+                          <button class="filters-form__custom-select-button input" type="button" id="brand-select-nikon">Nikon</button>
+                          <button class="filters-form__custom-select-button input" type="button" id="brand-select-sony">Sony</button>
+                          <button class="filters-form__custom-select-button input" type="button" id="brand-select-fujifilm">Fujifilm</button>
+                          <button class="filters-form__custom-select-button input" type="button" id="brand-select-samsung">Samsung</button>
+                          <button class="filters-form__custom-select-button input" type="button" id="brand-select-olympus">Olympus</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filters-form__price">
+                      <span class="filters-form__price-text">По цене</span>
+                      <div class="filters-form__price-container">
+                        <div class="filters-form__price-wrapper">
+                          <label class="filters-form__price-label" for="input-price-from">От</label>
+                          <input class="filters-form__price-input input" type="number" placeholder="500 000" name="price-from" id="input-price-from" />
+                        </div>
+                        <div class="filters-form__price-wrapper">
+                          <label class="filters-form__price-label" for="input-price-to">До</label>
+                          <input class="filters-form__price-input input" type="number" placeholder="25 000 000" name="price-to" id="input-price-to" />
+                        </div>
+                      </div>
+                      <span class="filters-form__price-text">Рублей</span>
+                    </div>
+                    <button class="filters-form__submit-button" type="submit">Применить</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="catalog__content">
+              <div class="catalog__list">
+                <a class="catalog__item product" href="#">
+                  <div class="product__image">
+                    <picture>
+                      <source srcset="./img/catalog/canon-eos-5d-mark-3-body@1x.webp 1x, ./img/catalog/canon-eos-5d-mark-3-body@2x.webp 2x" type="image/webp" width="160" height="160" />
+                      <img src="./img/catalog/canon-eos-5d-mark-3-body@1x.png" srcset="./img/catalog/canon-eos-5d-mark-3-body@2x.png 2x" alt="Путеводные таблички с названиями стран." width="160" height="160" />
+                    </picture>
+                  </div>
+                  <div class="product__content">
+                    <div class="product__text">
+                      <h2 class="product__title">Canon EOS 5D Mark III Body</h2>
+                      <p class="product__description">Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей профессиональных фотографов и видеооператоров. Преемник успешной модели EOS 5D Mark II. Фотоаппарат имеет 22.3 Мп. CMOS-сенсор размером 36х24 мм, 14-битный процессор DIGIC 5+, 61-точечный автофокус.</p>
+                    </div>
+                    <div class="product__price">
+                      <div class="product__old-price-wrapper">
+                        <span class="product__old-price">4 400,00 руб.</span>
+                      </div>
+                      <div class="product__current-price-wrapper">
+                        <span class="product__current-price">3 200,00 руб.</span>
+                        <div class="product__button">
+                          <svg width="17" height="16">
+                            <use href="./img/sprite.svg#cart"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a class="catalog__item product" href="#">
+                  <div class="product__image">
+                    <picture>
+                      <source srcset="./img/catalog/canon-eos-5d-mark-3-body@1x.webp 1x, ./img/catalog/canon-eos-5d-mark-3-body@2x.webp 2x" type="image/webp" width="160" height="160" />
+                      <img src="./img/catalog/canon-eos-5d-mark-3-body@1x.png" srcset="./img/catalog/canon-eos-5d-mark-3-body@2x.png 2x" alt="Путеводные таблички с названиями стран." width="160" height="160" />
+                    </picture>
+                  </div>
+                  <div class="product__content">
+                    <div class="product__text">
+                      <h2 class="product__title">Canon EOS 5D Mark III Body</h2>
+                      <p class="product__description">Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей, профессиональных фотографов.</p>
+                    </div>
+                    <div class="product__price">
+                      <div class="product__current-price-wrapper">
+                        <span class="product__current-price">3 200,00 руб.</span>
+                        <div class="product__button">
+                          <svg width="17" height="16">
+                            <use href="./img/sprite.svg#cart"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a class="catalog__item product" href="#">
+                  <div class="product__image">
+                    <picture>
+                      <source srcset="./img/catalog/canon-eos-5d-mark-3-body@1x.webp 1x, ./img/catalog/canon-eos-5d-mark-3-body@2x.webp 2x" type="image/webp" width="160" height="160" />
+                      <img src="./img/catalog/canon-eos-5d-mark-3-body@1x.png" srcset="./img/catalog/canon-eos-5d-mark-3-body@2x.png 2x" alt="Путеводные таблички с названиями стран." width="160" height="160" />
+                    </picture>
+                  </div>
+                  <div class="product__content">
+                    <div class="product__text">
+                      <h2 class="product__title">Canon EOS 5D Mark III Body</h2>
+                      <p class="product__description">Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей, профессиональных фотографов.</p>
+                    </div>
+                    <div class="product__price">
+                      <div class="product__current-price-wrapper">
+                        <span class="product__current-price">3 200,00 руб.</span>
+                        <div class="product__button">
+                          <svg width="17" height="16">
+                            <use href="./img/sprite.svg#cart"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a class="catalog__item product" href="#">
+                  <div class="product__image">
+                    <picture>
+                      <source srcset="./img/catalog/canon-eos-5d-mark-3-body@1x.webp 1x, ./img/catalog/canon-eos-5d-mark-3-body@2x.webp 2x" type="image/webp" width="160" height="160" />
+                      <img src="./img/catalog/canon-eos-5d-mark-3-body@1x.png" srcset="./img/catalog/canon-eos-5d-mark-3-body@2x.png 2x" alt="Путеводные таблички с названиями стран." width="160" height="160" />
+                    </picture>
+                  </div>
+                  <div class="product__content">
+                    <div class="product__text">
+                      <h2 class="product__title">Canon EOS 5D Mark III Body</h2>
+                      <p class="product__description">Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей, профессиональных фотографов.</p>
+                    </div>
+                    <div class="product__price">
+                      <div class="product__current-price-wrapper">
+                        <span class="product__current-price">3 200,00 руб.</span>
+                        <div class="product__button">
+                          <svg width="17" height="16">
+                            <use href="./img/sprite.svg#cart"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a class="catalog__item product" href="#">
+                  <div class="product__image">
+                    <picture>
+                      <source srcset="./img/catalog/canon-eos-5d-mark-3-body@1x.webp 1x, ./img/catalog/canon-eos-5d-mark-3-body@2x.webp 2x" type="image/webp" width="160" height="160" />
+                      <img src="./img/catalog/canon-eos-5d-mark-3-body@1x.png" srcset="./img/catalog/canon-eos-5d-mark-3-body@2x.png 2x" alt="Путеводные таблички с названиями стран." width="160" height="160" />
+                    </picture>
+                  </div>
+                  <div class="product__content">
+                    <div class="product__text">
+                      <h2 class="product__title">Canon EOS 5D Mark III Body</h2>
+                      <p class="product__description">Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей, профессиональных фотографов.</p>
+                    </div>
+                    <div class="product__price">
+                      <div class="product__current-price-wrapper">
+                        <span class="product__current-price">3 200,00 руб.</span>
+                        <div class="product__button">
+                          <svg width="17" height="16">
+                            <use href="./img/sprite.svg#cart"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a class="catalog__item product" href="#">
+                  <div class="product__image">
+                    <picture>
+                      <source srcset="./img/catalog/canon-eos-5d-mark-3-body@1x.webp 1x, ./img/catalog/canon-eos-5d-mark-3-body@2x.webp 2x" type="image/webp" width="160" height="160" />
+                      <img src="./img/catalog/canon-eos-5d-mark-3-body@1x.png" srcset="./img/catalog/canon-eos-5d-mark-3-body@2x.png 2x" alt="Путеводные таблички с названиями стран." width="160" height="160" />
+                    </picture>
+                  </div>
+                  <div class="product__content">
+                    <div class="product__text">
+                      <h2 class="product__title">Canon EOS 5D Mark III Body</h2>
+                      <p class="product__description">Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей, профессиональных фотографов.</p>
+                    </div>
+                    <div class="product__price">
+                      <div class="product__current-price-wrapper">
+                        <span class="product__current-price">3 200,00 руб.</span>
+                        <div class="product__button">
+                          <svg width="17" height="16">
+                            <use href="./img/sprite.svg#cart"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a class="catalog__item product" href="#">
+                  <div class="product__image">
+                    <picture>
+                      <source srcset="./img/catalog/canon-eos-5d-mark-3-body@1x.webp 1x, ./img/catalog/canon-eos-5d-mark-3-body@2x.webp 2x" type="image/webp" width="160" height="160" />
+                      <img src="./img/catalog/canon-eos-5d-mark-3-body@1x.png" srcset="./img/catalog/canon-eos-5d-mark-3-body@2x.png 2x" alt="Путеводные таблички с названиями стран." width="160" height="160" />
+                    </picture>
+                  </div>
+                  <div class="product__content">
+                    <div class="product__text">
+                      <h2 class="product__title">Canon EOS 5D Mark III Body</h2>
+                      <p class="product__description">Полнокадровая цифровая зеркальная камера.</p>
+                    </div>
+                    <div class="product__price">
+                      <div class="product__current-price-wrapper">
+                        <span class="product__current-price">3 200,00 руб.</span>
+                        <div class="product__button">
+                          <svg width="17" height="16">
+                            <use href="./img/sprite.svg#cart"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a class="catalog__item product" href="#">
+                  <div class="product__image">
+                    <picture>
+                      <source srcset="./img/catalog/canon-eos-5d-mark-3-body@1x.webp 1x, ./img/catalog/canon-eos-5d-mark-3-body@2x.webp 2x" type="image/webp" width="160" height="160" />
+                      <img src="./img/catalog/canon-eos-5d-mark-3-body@1x.png" srcset="./img/catalog/canon-eos-5d-mark-3-body@2x.png 2x" alt="Путеводные таблички с названиями стран." width="160" height="160" />
+                    </picture>
+                  </div>
+                  <div class="product__content">
+                    <div class="product__text">
+                      <h2 class="product__title">Canon EOS 5D Mark III Body</h2>
+                      <p class="product__description">Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей, профессиональных фотографов.</p>
+                    </div>
+                    <div class="product__price">
+                      <div class="product__current-price-wrapper">
+                        <span class="product__current-price">3 200,00 руб.</span>
+                        <div class="product__button">
+                          <svg width="17" height="16">
+                            <use href="./img/sprite.svg#cart"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a class="catalog__item product" href="#">
+                  <div class="product__image">
+                    <picture>
+                      <source srcset="./img/catalog/canon-eos-5d-mark-3-body@1x.webp 1x, ./img/catalog/canon-eos-5d-mark-3-body@2x.webp 2x" type="image/webp" width="160" height="160" />
+                      <img src="./img/catalog/canon-eos-5d-mark-3-body@1x.png" srcset="./img/catalog/canon-eos-5d-mark-3-body@2x.png 2x" alt="Путеводные таблички с названиями стран." width="160" height="160" />
+                    </picture>
+                  </div>
+                  <div class="product__content">
+                    <div class="product__text">
+                      <h2 class="product__title">Canon EOS 5D Mark III Body</h2>
+                      <p class="product__description">Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей, профессиональных фотографов.</p>
+                    </div>
+                    <div class="product__price">
+                      <div class="product__current-price-wrapper">
+                        <span class="product__current-price">3 200,00 руб.</span>
+                        <div class="product__button">
+                          <svg width="17" height="16">
+                            <use href="./img/sprite.svg#cart"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a class="catalog__item product" href="#">
+                  <div class="product__image">
+                    <picture>
+                      <source srcset="./img/catalog/canon-eos-5d-mark-3-body@1x.webp 1x, ./img/catalog/canon-eos-5d-mark-3-body@2x.webp 2x" type="image/webp" width="160" height="160" />
+                      <img src="./img/catalog/canon-eos-5d-mark-3-body@1x.png" srcset="./img/catalog/canon-eos-5d-mark-3-body@2x.png 2x" alt="Путеводные таблички с названиями стран." width="160" height="160" />
+                    </picture>
+                  </div>
+                  <div class="product__content">
+                    <div class="product__text">
+                      <h2 class="product__title">Canon EOS 5D Mark III Body</h2>
+                      <p class="product__description">Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей, профессиональных фотографов.</p>
+                    </div>
+                    <div class="product__price">
+                      <div class="product__current-price-wrapper">
+                        <span class="product__current-price">3 200,00 руб.</span>
+                        <div class="product__button">
+                          <svg width="17" height="16">
+                            <use href="./img/sprite.svg#cart"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a class="catalog__item product" href="#">
+                  <div class="product__image">
+                    <picture>
+                      <source srcset="./img/catalog/canon-eos-5d-mark-3-body@1x.webp 1x, ./img/catalog/canon-eos-5d-mark-3-body@2x.webp 2x" type="image/webp" width="160" height="160" />
+                      <img src="./img/catalog/canon-eos-5d-mark-3-body@1x.png" srcset="./img/catalog/canon-eos-5d-mark-3-body@2x.png 2x" alt="Путеводные таблички с названиями стран." width="160" height="160" />
+                    </picture>
+                  </div>
+                  <div class="product__content">
+                    <div class="product__text">
+                      <h2 class="product__title">Canon EOS 5D Mark III Body</h2>
+                      <p class="product__description">Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей, профессиональных фотографов.</p>
+                    </div>
+                    <div class="product__price">
+                      <div class="product__current-price-wrapper">
+                        <span class="product__current-price">3 200,00 руб.</span>
+                        <div class="product__button">
+                          <svg width="17" height="16">
+                            <use href="./img/sprite.svg#cart"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

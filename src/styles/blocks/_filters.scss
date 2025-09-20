@@ -1,0 +1,89 @@
+@use "../common/variables" as *;
+
+.filters {
+  position: relative;
+
+  &__open-button {
+    display: none;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: #757575;
+    cursor: pointer;
+    transition: color 0.3s;
+    outline: none;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-main;
+    }
+  }
+
+  &__close-button {
+    display: none;
+    width: 19px;
+    height: 19px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: currentColor;
+    cursor: pointer;
+    transition: color 0.3s;
+    outline: none;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover,
+    &:focus {
+      color: #b4b4b4;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &__wrapper {
+      flex-direction: column;
+      justify-content: center;
+      display: none;
+      z-index: 30;
+      position: fixed;
+      top: 0;
+      left: 50%;
+      width: 280px;
+      height: 100vh;
+      transform: translateX(-50%);
+    }
+
+    &__wrapper.is-opened {
+      display: flex;
+    }
+
+    &__open-button {
+      display: block;
+    }
+
+    &__form {
+      overflow: auto;
+      max-height: calc(100vh - 40px);
+      background-color: $color-white;
+    }
+
+    &__close-button {
+      display: block;
+      color: $color-white;
+      margin-bottom: 8px;
+      align-self: flex-end;
+    }
+  }
+}
