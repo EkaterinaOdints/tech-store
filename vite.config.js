@@ -55,7 +55,7 @@ export default defineConfig({
       targets: [
         {
           src: "fonts/**",
-          dest: "fonts",
+          dest: "assets",
         },
       ],
     }),
