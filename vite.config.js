@@ -1,18 +1,19 @@
-import { defineConfig } from 'vite';
-import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+import { defineConfig } from "vite";
+import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 export default defineConfig({
-  root: './src',
-  base: './',
+  root: "./src",
+  base: "./",
   build: {
-    outDir: '../dist',
+    outDir: "../dist",
     emptyOutDir: true,
   },
   server: {
     open: true,
   },
   css: {
-    devSourcemap: true
+    devSourcemap: true,
   },
   plugins: [
     ViteImageOptimizer({
@@ -21,7 +22,7 @@ export default defineConfig({
       logStats: true,
       ansiColors: true,
       cache: true,
-      cacheLocation: './.cache',
+      cacheLocation: "./.cache",
       png: {
         quality: 80,
         palette: true,
@@ -38,7 +39,7 @@ export default defineConfig({
         multipass: true,
         plugins: [
           {
-            name: 'preset-default',
+            name: "preset-default",
             params: {
               overrides: {
                 removeViewBox: false,
@@ -46,9 +47,17 @@ export default defineConfig({
               },
             },
           },
-          'removeDimensions',
+          "removeDimensions",
         ],
       },
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: "fonts/**",
+          dest: "fonts",
+        },
+      ],
     }),
   ],
 });
