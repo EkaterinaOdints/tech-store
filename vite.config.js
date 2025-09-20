@@ -6,7 +6,7 @@ export default defineConfig({
   root: "./src",
   base: "./",
   build: {
-    outDir: "../dist",
+    outDir: "../docs",
     emptyOutDir: true,
   },
   server: {
@@ -21,8 +21,6 @@ export default defineConfig({
       includePublic: false,
       logStats: true,
       ansiColors: true,
-      cache: true,
-      cacheLocation: "./.cache",
       png: {
         quality: 80,
         palette: true,
@@ -54,8 +52,8 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: "fonts/**",
-          dest: "assets",
+          src: "fonts/**/*",
+          dest: "assets/fonts",
         },
       ],
     }),
