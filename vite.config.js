@@ -17,7 +17,7 @@ export default defineConfig({
   },
   plugins: [
     ViteImageOptimizer({
-      test: /\.(jpe?g|png|svg)$/i,
+      test: /\.(jpe?g|png)$/i,
       includePublic: false,
       logStats: true,
       ansiColors: true,
